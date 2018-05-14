@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ECharts">
+    <title>捷成智慧教育大数据可视化平台</title>
+    <link href="./asset/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./asset/css/bootstrap.css" rel="stylesheet">
+    <link href="./asset/css/carousel.css" rel="stylesheet">
+    <link href="./asset/css/echartsHome.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/base.css" />
+    <link type="text/css" rel="stylesheet" href="css/page_02.css" />
+    <link type="text/css" rel="stylesheet" href="css/page_02_bigdata.css" />
+    <link type="text/css" rel="stylesheet" href="./asset/css/monokai.css" >
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+	<script src="./www/js/echarts.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/page_02.js"></script>
+    <script type="text/javascript" src="js/page_02_data.js"></script>
+    <script type="text/javascript" src="js/echarts-all.js"></script>
+    <script type="text/javascript" src="js/echartsHome.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/echartsExample.js"></script>
+    <script src="js/num.js"></script>
+</head>
+
+<body>
+    <div class="main_title nt">捷成智慧教育大数据可视化平台</div>
+    <div class="con_body">
+        <!--    左侧资源    -->
+        <div class="con_left">
+            <div class="con_top" style="height:170px;">
+                <div class="title"><em class="areaId"></em>注册总人数</div>
+                <div class="wx_renyuantotle">
+                    <p class="totalnum"></p>
+                    <ul class="numul" id="totuser"></ul>
+                    <span class="ren">人</span>
+                </div>
+            </div>
+            <div class="con_top">
+                <div class="title"><em class="areaId"></em>教师、学生、家长用户比例</div>
+                <div class="wx_bg_fff">
+                    <div id="leixing" class="zongshutu"></div>
+                </div>
+            </div>
+            <div class="con_top">
+                <div class="title"><em class="areaId"></em>教师、学生、家长用户比例</div>
+                <div class="wx_bg_fff">
+                    <div id="sexpercent" class="zongshutu"></div>
+                </div>
+            </div>
+        </div>
+        <!--	中间地图	    -->
+        <div class="con_middle">
+            <div class="big_data_tab_tri_1">
+                <div class="tps">
+                    <div class="teacher">
+                        <p class="tpsnum">
+                            <i id="count-number"></i>
+                            <span>人</span></p>
+                        <p class="wx_toumingtiao"><em class="areaId"></em>教师注册总人数</p>
+                    </div>
+                    <div class="student">
+                        <p class="tpsnum">
+                            <i id="count-number2"></i>
+                            <span>人</span></p>
+                        <p class="wx_toumingtiao"><em class="areaId"></em>学生注册总人数</p>
+                    </div>
+                    <div class="parent">
+                        <p class="tpsnum">
+                            <i id="count-number3"></i>
+                            <span>人</span>
+                        </p>
+                        <p class="wx_toumingtiao"><em class="areaId"></em>家长注册总人数</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="title"><em class="areaId"></em>地区</div>
+                <div class="wx_areabiaoshi">
+                    <p><span class="wx_hongse"></span> 已落地</p>
+                    <p><span class="wx_lanse"></span> 未落地</p>
+                </div>
+                <div class="row-fluid example">
+                    <div id="graphic">
+                        <div id="mainMap" class="main" style="height: 500px;width:100%;"></div>
+                        <div style="display:none">
+                            <button type="button" class="btn btn-sm btn-success" onclick="refresh(true)">刷 新</button>
+                            <span class="text-primary">切换主题</span>
+                            <select id="theme-select"></select>
+
+                            <span id='wrong-message' style="color:red"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+
+        <div class="con_right">
+            <!-- 资源类型统计 -->
+            <div class="con_top">
+                <div class="title"><em class="areaId"></em>资源类型比</div>
+                <div style="margin-top:40px;">
+                    <div id="resouceclass" style="width:100%;height:182px;"></div>
+                </div>
+            </div>
+            <!-- 资源总数 -->
+            <div class="con_top" style="padding-left: 15px;">
+                <div class="title"><em class="areaId"></em>资源建设总量</div>
+                <div class="big_data_tab_tri">
+                    <ul class="numul" id="totrece"></ul>
+                    <span class="ren">个</span>
+                    <div id="resouce" style="width:100%;height:266px;"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="con_body2">
+        <div class="con_left">
+            <div class="con_top">
+                <div class="title"><em class="areaId"></em>试题统计</div>
+                <div style="margin-top:40px;">
+                    <p class="wx_lan_titi"><em class="areaId"></em>试题类型比</p>
+                    <p class="wx_yuan_middle">试题建设总量<br>
+                       <span class="wx_lanzi_midd">1000000</span>个
+                   </p>
+                    <div id="shitibingtu" style="height:300px"></div>
+                </div>
+                <div style="margin-top:40px;">
+                   <p class="wx_lan_titi"><em class="areaId"></em>试题建设总量</p>
+                    <div id="shitizhutu" style="height:300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="con_middle">
+            <div class="con_top">
+                <div class="title"><em class="areaId"></em>作业统计</div>
+                <div style="margin-top:40px;">
+                   <p class="wx_lan_titi"><em class="areaId"></em>作业类型比</p>
+                   <p class="wx_yuan_middle">作业建设总量<br>
+                       <span class="wx_lanzi_midd">1000000</span>个
+                   </p>
+                    <div id="zuoyebingtu" style="height:300px"></div>
+                </div>
+                <div style="margin-top:40px;">
+                   <p class="wx_lan_titi"><em class="areaId"></em>作业建设总量</p>
+                    <div id="zuoyezhutu" style="height:300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="con_right">
+            <div class="con_top">
+                <div class="title"><em class="areaId"></em>教研统计</div>
+                <div style="margin-top:40px;">
+                   <p class="wx_lan_titi"><em class="areaId"></em>教研类型比</p>
+                   <p class="wx_yuan_middle">教研建设总量<br>
+                       <span class="wx_lanzi_midd">1000000</span>个
+                   </p>
+                    <div id="jiaoyanbingtu" style="height:300px;"></div>
+                </div>
+                <div style="margin-top:40px;">
+                   <p class="wx_lan_titi"><em class="areaId"></em>教研建设总量</p>
+                    <div id="jiaoyanzhutu" style="height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <script src="./asset/js/jquery.min.js"></script>
+    <!--<script src="./asset/js/echartsHome.js"></script>-->
+    <!--<script src="./asset/js/bootstrap.min.js"></script>-->
+    <!--<script src="./asset/js/echartsExample.js"></script>-->
+
+    
+	<script src="js/chartdata.js"></script>
+    <script src="js/num.js"></script>
+</body>
+
+</html>
+
+<script src="js/ditu.js"></script>

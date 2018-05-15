@@ -7,26 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ECharts">
     <title>捷成智慧教育大数据可视化平台</title>
-    <link href="./asset/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./asset/css/bootstrap.css" rel="stylesheet">
-    <link href="./asset/css/carousel.css" rel="stylesheet">
-    <link href="./asset/css/echartsHome.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" >
     <link type="text/css" rel="stylesheet" href="css/base.css" />
     <link type="text/css" rel="stylesheet" href="css/page_02.css" />
-    <link type="text/css" rel="stylesheet" href="css/page_02_bigdata.css" />
-    <link type="text/css" rel="stylesheet" href="./asset/css/monokai.css" >
-    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-	<script src="./www/js/echarts.js"></script>
-    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="js/echarts.min.js"></script>
-    <script type="text/javascript" src="js/page_02.js"></script>
-    <script type="text/javascript" src="js/page_02_data.js"></script>
-    <script type="text/javascript" src="js/echarts-all.js"></script>
-    <script type="text/javascript" src="js/echartsHome.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/echartsExample.js"></script>
+	<script src="js/echarts.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-all.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/num.js"></script>
+    <script src="js/ditu.js"></script>
 </head>
 
 <body>
@@ -87,21 +76,15 @@
                     <p><span class="wx_hongse"></span> 已落地</p>
                     <p><span class="wx_lanse"></span> 未落地</p>
                 </div>
+                <!--       中国地图         -->
                 <div class="row-fluid example">
                     <div id="graphic">
+                        <!--   地图数据绑定到mainMap   -->
                         <div id="mainMap" class="main" style="height: 500px;width:100%;"></div>
-                        <div style="display:none">
-                            <button type="button" class="btn btn-sm btn-success" onclick="refresh(true)">刷 新</button>
-                            <span class="text-primary">切换主题</span>
-                            <select id="theme-select"></select>
-
-                            <span id='wrong-message' style="color:red"></span>
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="clearfix"></div>
-
         </div>
 
         <div class="con_right">
@@ -176,19 +159,7 @@
             </div>
         </div>
     </div>
-
     <div class="clearfix"></div>
-
-    <script src="./asset/js/jquery.min.js"></script>
-    <!--<script src="./asset/js/echartsHome.js"></script>-->
-    <!--<script src="./asset/js/bootstrap.min.js"></script>-->
-    <!--<script src="./asset/js/echartsExample.js"></script>-->
-
-    
-	<script src="js/chartdata.js"></script>
-    <script src="js/num.js"></script>
 </body>
-
+<script src="js/chartdata.js"></script>
 </html>
-
-<script src="js/ditu.js"></script>

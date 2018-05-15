@@ -133,20 +133,18 @@ body {
 
 .container-fluid{
     background:rgba(255,255,255,.1);
-    margin-top:20px;
+    margin-top:30px;
     border-radius: 6px;
     position: relative;
 }
 .con_right {
     width: 25%;
-    /*    margin-left:1.3%;*/
     float: right;
 }
 
 .con_top {
     position: relative;
     margin-bottom: 23px;
-/*    height: 670px;*/
     width: 100%;
 }
 
@@ -178,13 +176,11 @@ body {
 .numul li {
     width: 40px;
     height: 50px;
-/*    background: url(../img/number.png)no-repeat;*/
     display: inline-block;
     color: #fff;
     text-align: center;
     line-height: 50px;
     font-size: 30px;
-/*    font-weight: bold;*/
     background: rgba(237, 235, 235, 0.1);
     margin: 0 4px;
     font-family: fantasy;
@@ -227,7 +223,6 @@ body {
     margin-top: 50px;
     height: 460px;
     padding: 1px 15px 20px;
-    /*    background: url(../img/con_rb_bg_l.png) no-repeat;*/
     border: 1px solid #204289;
     background: rgba(48, 38, 102, 0.3);
     border-top-left-radius: 6px;
@@ -277,7 +272,6 @@ body {
 
 .tps {
     width: 100%;
-/*    margin-top: 20px;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -308,6 +302,7 @@ body {
     font-size: 24px;
     color:#fff;
     text-align: center;
+    line-height: 50px;
 }
 
 .wx_toumingtiao{
@@ -334,7 +329,6 @@ body {
 }
 
 .zilx {
-    /*    width: 500px;*/
     height: 500px;
     margin: 10px auto 20px;
 }
@@ -354,7 +348,6 @@ body {
 .wx_bg_fff {
     width: 100%;
     height: 168px;
-/*    background: rgba(255, 255, 255, .1);*/
     margin: 10px 0 10px 0;
 }
 
